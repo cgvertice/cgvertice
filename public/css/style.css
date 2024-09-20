@@ -1,0 +1,2348 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+    font-family: "titulo";
+    src: url(../font/Jost-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "parrafos";
+    src: url(../font/Moderustic-VariableFont_wght.ttf);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "titulo";
+    font-size: 100px;
+}
+
+p,
+li,
+a {
+    font-family: "parrafos";
+}
+
+.fondo {
+    background-color: #1a1a1a;
+}
+
+/* Botón de whatsapp */
+
+.btn-wsp {
+    position: fixed;
+    width: 60px;
+    /* Tamaño del botón */
+    height: 60px;
+    /* Tamaño del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    box-shadow: 0px 1px 20px #0df0558c;
+    background-color: #0df0558c;
+}
+
+.btn-wsp2 {
+    position: fixed;
+    width: 60px;
+    /* Tamaño del botón */
+    height: 60px;
+    /* Tamaño del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    box-shadow: 0px 1px 20px #d1d1d1;
+    background-color: #d1d1d1;
+}
+
+.btn-wsp {
+    border-radius: 50%;
+    bottom: 30px;
+    left: 15px;
+}
+
+.btn-wsp2 {
+    border-radius: 50%;
+    bottom: 110px;
+    /* Ajuste de la separación entre los botones */
+    left: 15px;
+}
+
+/* Estilos para el texto que aparecerá al hacer hover */
+.btn-wsp::after,
+.btn-wsp2::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 58px;
+    /* Ajusta para que el texto aparezca a la derecha del botón */
+    bottom: 50%;
+    /* Centra el texto verticalmente con respecto al botón */
+    transform: translateY(50%);
+    background-color: #d1d1d1;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 101;
+}
+
+.btn-wsp::after {
+    background-color: #0df0558c;
+    color: #000;
+}
+
+.btn-wsp:hover::after,
+.btn-wsp2:hover::after {
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------------- */
+
+/* Estilos del navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+/*  */
+ul {
+    margin-bottom: 10px;
+    /* Ajusta este valor según tus necesidades */
+}
+
+ul li {
+    margin-bottom: 5px;
+    /* Ajusta este valor según tus necesidades */
+}
+
+.logo-cgv {
+    position: relative;
+    max-width: 80px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    border: 0px;
+}
+
+/* Esta animación gradua el tamaño del elemento */
+/* !!!!!!!!!!!!!!!!!!!!!IMPORTANTE: NO MOVER¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ */
+/* // Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 6));
+        /* Ajusta el valor según la cantidad de imágenes la mitad solo */
+    }
+}
+
+/* Este es el slider de los productos que aparecen en el inicio. La ruta del modulo es: C:\xampp\htdocs\CGVertice\resources\views\sistema\CGV\includes\sliderProductos.blade.php */
+.sliderP {
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+
+    .slide-track {
+        animation: scroll 15s linear infinite;
+    }
+}
+
+/* Este es el slider de los aliados que aparecen en la parte inferior del inicio (y otrás pestañas) para computadoras. */
+/* SliderAliados */
+.slider {
+    background: #1a1a1a;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    /* Centra verticalmente */
+    margin: 0 auto;
+    /* Centra horizontalmente */
+
+    &::before,
+    &::after {
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            #1a1a1a 100%
+        );
+        content: "";
+        height: 100px;
+        position: absolute;
+        width: 200px;
+        z-index: 2;
+    }
+
+    &::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+
+    &::before {
+        left: 0;
+        top: 0;
+    }
+
+    .slide-track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250px * 11);
+        /* Ajusta el valor según la cantidad de imágenes */
+    }
+
+    .slide {
+        height: 100px;
+        width: 250px;
+        align-items: center;
+        /* Centra verticalmente */
+        margin: 0 auto;
+        /* Centra horizontalmente */
+    }
+
+    .img-slider {
+        height: 100%;
+        width: auto;
+    }
+}
+
+/* ------------------------------------------------------------ */
+/* --------------------- Media Queries --------------------- */
+/* ------------------------------------------------------------ */
+
+/* Este es el slider de los aliados que aparecen en la parte inferior del inicio (y otrás pestañas)*/
+/* Pantallas Pequeñas (Móviles) */
+
+@media (max-width: 767px) {
+    /* // Animation */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-150px * 6));
+            /* Ajusta el valor según la cantidad de imágenes la mitad solo */
+        }
+    }
+
+    /* // Styling */
+    .slider {
+        height: 100px;
+
+        &::before,
+        &::after {
+            width: 70px;
+        }
+
+        .slide-track {
+            animation: scroll 40s linear infinite;
+            display: flex;
+            width: calc(150px * 11);
+        }
+
+        .slide {
+            height: 100px;
+            width: 150px;
+            align-items: center;
+            /* Centra verticalmente */
+            margin: 0 auto;
+            /* Centra horizontalmente */
+        }
+
+        .img-slider {
+            height: 50%;
+            width: auto;
+        }
+    }
+}
+
+/* Este es el slider de los aliados que aparecen en la parte inferior del inicio (y otrás pestañas)*/
+/* Tablets en Modo Retrato */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* // Animation */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-200px * 6));
+            /* Ajusta el valor según la cantidad de imágenes la mitad solo */
+        }
+    }
+
+    /* // Styling */
+    .slider {
+        height: 90px;
+
+        &::before,
+        &::after {
+            width: 170px;
+        }
+
+        .slide-track {
+            animation: scroll 40s linear infinite;
+            display: flex;
+            width: calc(200px * 11);
+        }
+
+        .slide {
+            height: 90px;
+            width: 200px;
+            align-items: center;
+            /* Centra verticalmente */
+            margin: 0 auto;
+            /* Centra horizontalmente */
+        }
+
+        .img-slider {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* Contenedor del la imagen y texto inductivo acerca de la empresa. Es el primero contenedor en la pagina de inicio */
+/* PrimerContenedor */
+.content {
+    position: relative;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .content {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .content .imgBox {
+        max-width: 90%;
+        justify-content: center;
+    }
+
+    .content .imgBox img {
+        max-width: 250px;
+    }
+}
+
+/* Este es el código css para la modificación de las cards en la linea de tiempo en la pestaña "Nosotros" */
+/* CardsNosotros */
+.cardNosotros {
+    outline-style: none;
+}
+
+/* Este es el código css para la modificación de las cards en la linea de tiempo en la pestaña "Blog". La ruta es: C:\xampp\htdocs\CGVertice\resources\views\sistema\blog\index.blade.php */
+/* cardBlog */
+
+.ContainerBlogSecond {
+    padding-left: 15%;
+    padding-right: 15%;
+    /* Quitamos justify-content y display flex */
+}
+
+.cardBlog {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    border: #b8860b 1px solid;
+    border-radius: 5%;
+    box-shadow: 0 2px 15px #b8860b;
+    margin-bottom: 20px; /* Aseguramos margen inferior para separar las tarjetas */
+}
+
+.imgcontainer {
+    padding-top: 5px;
+}
+
+.imgcontainer img {
+    width: 170px;
+    height: 170px;
+}
+
+.CategoriaNoticias {
+    font-size: 20px;
+    color: #b8860b;
+}
+
+.NombreNoticias {
+    margin-top: 2%;
+}
+
+.btndropdown {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/* Estos estilos son para las  6 tarjetas de los principales servicios de la empresa. La ruta es: C:\xampp\htdocs\CGVertice\resources\views\sistema\CGV\includes\serviciosTeaser.blade.php */
+/* CardServiciosTeaser */
+/* Estilos generales para dispositivos grandes (computadoras de escritorio) */
+.contenedorst {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.contenedorst .card {
+    position: relative;
+    max-width: 380px;
+    height: 280px;
+    background: transparent;
+    margin: 30px 15px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 15px #b8860b;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.contenedorst .card:hover {
+    height: auto;
+    transform: scaleY(1.1);
+}
+
+.contenedorst .card .imgBx {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    top: -12px;
+}
+
+.contenedorst .card .imgBx img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+}
+
+.contenedorst .card h5 {
+    padding: 5px;
+    color: #b8860b;
+}
+
+.contenedorst .card .content {
+    position: relative;
+    margin-top: -140px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.contenedorst .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -100px;
+    transition-delay: 0.3;
+}
+
+.contenedorst .card:hover .content p {
+    margin-top: 80px;
+}
+
+/* MediaQuery de las tarjetas anteriormente mencionadas */
+/* Consulta @media para tabletas (768px de ancho o menos) */
+@media (max-width: 768px) {
+    .contenedorst {
+        width: 100%;
+        /* Las tarjetas ocuparán todo el ancho de la pantalla */
+        padding: 40px;
+    }
+
+    .contenedorst .card {
+        max-width: 100%;
+        /* Las tarjetas ocuparán todo el ancho de la pantalla */
+    }
+}
+
+/* Consulta @media para teléfonos móviles (576px de ancho o menos) */
+@media (max-width: 576px) {
+    .contenedorst {
+        width: 100%;
+        /* Las tarjetas ocuparán todo el ancho de la pantalla */
+        padding: 20px;
+    }
+
+    .contenedorst .card {
+        max-width: 100%;
+        /* Las tarjetas ocuparán todo el ancho de la pantalla */
+        margin: 20px 0;
+        /* Espacio inferior reducido */
+    }
+}
+
+/* Estilos de la parte de los CEOS ubicada en la pestaña nosotros */
+/* CEOSStyle */
+
+.imgCEOS img {
+    border: #b8860b 1px solid;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    box-shadow: 0 2px 15px #b8860b;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.Objetivos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Objetivos li {
+    list-style: none;
+}
+
+.imgCEOS :hover {
+    transform: scale(1.1);
+    background-color: #ffffff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#Reseña {
+    padding: 2% 4% 2% 4%;
+}
+
+/* VideoTestimonio */
+#TextoTestimonio {
+    padding-top: 3%;
+}
+
+#ContainerTestimonios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#VideoID {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    margin-left: 12%;
+}
+
+.TextoAmplioNuestrosServicios {
+    padding: 3% 7% 2% 7%;
+}
+
+.ImgMain {
+    margin-right: 10%;
+}
+
+#MainTittle {
+    font-size: 75px;
+    font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+/* CGV tienda SG-SST */
+.a {
+    text-decoration: none;
+}
+
+.product-slider {
+    background-color: #1a1a1a;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.slider-heading {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0px auto;
+    padding: 0px 20px;
+}
+
+.slider-heading h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 34px;
+}
+
+.product-box {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    text-decoration: none;
+    background-color: #727272;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 8px rgba(165, 144, 144, 0.03);
+    border: 1px solid rgba(0, 0, 00.08);
+    overflow: hidden;
+    transition: all ease 0.3s;
+}
+
+.product-box {
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+    transform: sclae(1.008);
+    transition: all ease 0.3s;
+}
+
+.product-box strong {
+    font-size: 1.75rem;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-weight: 600;
+    margin-top: 24px;
+}
+
+.product-box img {
+    width: 210px;
+    height: 250px;
+    display: flex;
+    padding: 20px, 0px;
+    object-fit: contain;
+    object-position: center;
+    margin: 20px auto;
+}
+
+.available-colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.available-colors .product-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 2px 2px 30px rgba(0, 0, 0, 0.03);
+    margin: 3px;
+}
+
+.buy-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px 0px;
+}
+
+.buy-price p {
+    color: #6e6e73;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 0.9rem;
+    max-width: 250px;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buy-price .buy-btn {
+    color: #ffff;
+    background-color: #0071e3;
+    text-decoration: none;
+    width: 80px;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.lSPager {
+    display: none;
+}
+
+.lSAction > a {
+    background-color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.lSAction > .lSNext::before {
+    content: ">";
+    /* Utiliza el carácter ">" para la flecha siguiente */
+    font-size: 3rem;
+    /* Ajusta el tamaño de la fuente según tus preferencias */
+    color: #ffffff;
+    /* Color de la flecha */
+    top: -17px;
+    /* Ajusta la posición vertical hacia arriba */
+}
+
+.lSAction > .lSPrev::before {
+    content: "<";
+    /* Utiliza el carácter "<" para la flecha anterior */
+    font-size: 3rem;
+    /* Ajusta el tamaño de la fuente según tus preferencias */
+    color: #ffffff;
+    /* Color de la flecha */
+    top: -17px;
+    /* Ajusta la posición vertical hacia arriba */
+}
+
+/* Añade un espacio entre el contenido y el borde del botón */
+.lSAction > a::before,
+.lSAction > a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* making responsive */
+@media (max-width: 600px) {
+    .slider-heading h3 {
+        font-size: 21px;
+    }
+
+    .product-box {
+        width: 310px;
+        margin: 10px;
+        box-sizing: border-box;
+    }
+
+    .product-box img {
+        width: 160px;
+        height: 190px;
+        padding: 0px;
+    }
+
+    .product-box strong {
+        font-size: 21px;
+    }
+
+    .lSAction > a {
+        display: none;
+    }
+
+    .product-slider {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 400px) {
+    .product-box {
+        width: 280px;
+    }
+
+    .product-box strong {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 394px) {
+    .product-box {
+        width: 225px;
+    }
+
+    .product-box img {
+        width: 140px;
+        height: 165px;
+    }
+
+    .buy-price {
+        flex-direction: column;
+    }
+
+    .buy-price .buy-btn {
+        width: 100%;
+    }
+}
+
+/* Estilos del botón para el cambio de tema */
+/* BtnCambiarColor */
+
+#Btnchangetopic {
+    padding-bottom: 35%;
+}
+
+/* Botón que se encarga de mover hacia arriba */
+
+#backToTopBtn {
+    position: fixed;
+    bottom: -1%;
+    left: 48.4%;
+    /* Cambiado a la izquierda */
+    display: none;
+    /* Inicialmente oculto */
+    z-index: 99;
+    /* Para que esté sobre otros elementos */
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0.5%;
+    border: none;
+}
+
+#backToTopBtn:hover {
+    border: 1px solid #b8860b;
+    /* Cambiar el color al pasar el mouse */
+}
+
+#backToTopBtn i {
+    color: #b8860b;
+    /* Color del icono */
+}
+
+/* Fin tienda CGV SG-SST */
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+#bodytabsQuienessomos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maintabsQuienessomos {
+    width: 100%;
+    height: auto;
+    padding: 52px 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(235, 235, 235, 0.8);
+    margin: 0 16px;
+}
+
+#pmaintabsQuienessomos {
+    padding-top: 4%;
+    color: #000000;
+    /* Texto en color negro */
+}
+
+.logo-vertice {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-vertice img {
+    width: 200px;
+    /* Tamaño de tu logo */
+}
+
+.ventajas-vertice {
+    margin-top: 20px;
+}
+
+.ventajas-vertice ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #333;
+    /* Texto en color negro */
+}
+
+.nav-item {
+    background-color: transparent;
+    /* Fondo transparente */
+}
+
+.nav-link {
+    color: #333;
+    /* Texto en color negro */
+}
+
+.nav-link:not(.active) {
+    color: #000;
+    /* Puedes ajustar el color a tu preferencia */
+}
+
+.nav-link:hover:not(.active) {
+    color: #000;
+    /* Puedes ajustar el color a tu preferencia */
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+#botonRegresar {
+    color: black;
+    text-decoration: overline;
+}
+
+#botonRegresar:hover {
+    color: #b8860b;
+    text-decoration: overline;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* Estilos para la sección "Conózcanos" */
+.section-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 94vh;
+    background-image: url("../img/Nosotros.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.section-about .content-Conózcanos {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    height: auto;
+    width: auto;
+}
+
+.section-about .titulo {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.section-about .texto {
+    font-size: 1.1rem;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para la sección "Servicios" */
+.section-abouts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 94vh;
+    background-image: url("../img/nuestrosServicios.jpeg");
+    /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center;
+    /* Centra la imagen */
+    margin: 0;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    /* Sombra ligera */
+}
+
+/* Estilos para el contenido de "Servicios" */
+.section-abouts .content-Servicios {
+    /* Agrega un fondo casi transparente al contenido */
+    background-color: rgba(255, 255, 255, 0.651);
+    /* Ajusta la transparencia según tus preferencias */
+    padding: 20px;
+    /* Agrega espaciado alrededor del contenido */
+    height: auto;
+    width: auto;
+}
+
+.section-abouts .titulo {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #000;
+    /* Texto oscuro sobre fondo claro */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    /* Sombra de texto */
+}
+
+.section-abouts .texto {
+    font-size: 1.1rem;
+    color: #000;
+    /* Texto oscuro */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    /* Sombra de texto */
+}
+
+/* Estilo para el video de la pestaña "nosotros" */
+
+.section-about-video {
+    padding-top: 50px;
+}
+
+/* Estilo para el contenedor del video */
+.section-about-video .col-lg-9 {
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+    background-color: #1a1a1a;
+    /* Fondo negro para el video */
+    color: #b8860b;
+    /* Texto blanco en el video */
+    padding: 20px;
+    border: 1px solid #b8860b;
+    /* Borde ligero alrededor del video */
+    transition: all 0.3s;
+    /* Transición suave */
+    display: flex;
+    /* Utilizar flexbox para alinear elementos */
+    align-items: center;
+    /* Centrar verticalmente el contenido */
+}
+
+/* Efecto al pasar el mouse sobre el contenedor del video */
+.section-about-video .col-lg-9:hover {
+    color: #000;
+    /* Texto oscuro al pasar el mouse */
+    transform: scale(1.05);
+    /* Escalar al pasar el mouse */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /* Sombra más pronunciada al pasar el mouse */
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+}
+
+/* Estilo para las columnas de la derecha */
+.section-about-video .col-lg-3 {
+    background-color: black;
+    /* Cambiar el fondo a un tono rojizo */
+    color: #b8860b;
+    /* Texto oscuro en la columna 3 */
+    padding: 20px;
+    border: 1px solid #b8860b;
+    transition: all 0.3s;
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+}
+
+/* Efecto al pasar el mouse sobre las columnas de la derecha */
+.section-about-video .col-lg-3:hover {
+    background-color: #1a1a1a;
+    /* Mantener el tono rojizo al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2 {
+    position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    /* background-color: #26c6da; */
+    background-color: #9b9b9b;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-2 {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -11px;
+    /* background-color: #26c6da; */
+    background-color: #000;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left-2 {
+    padding: 0px 40px 20px 0px;
+    left: 0;
+}
+
+/* Place the container to the right */
+.right-2 {
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-2::after {
+    left: -14px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .main-timeline-2::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .timeline-2 {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline-2::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left-2::after,
+    .right-2::after {
+        left: 18px;
+    }
+
+    .left-2::before {
+        right: auto;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right-2 {
+        left: 0%;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+.MapaGoogle {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+/* Estilo para el acrónimo */
+.acrostico {
+    color: #fffefe;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: inline-block;
+    animation: colorChange 4s infinite;
+}
+
+/* Estilo para el texto del acrónimo */
+.acrostico-text {
+    /* font-size: 18px; */
+    color: white;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+/* Animación de cambio de colores */
+@keyframes colorChange {
+    0%,
+    100% {
+        color: #b8860b;
+    }
+
+    50% {
+        color: #1a1a1a;
+    }
+}
+
+/* Estilo para las etiquetas 'a' con clase "cgv" */
+a.cgv {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 10px;
+    color: #b8860b;
+    /* Cambié el color del texto a un tono de azul */
+    background-color: #f9f9f9;
+    /* Fondo más claro y neutro */
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    /* Transiciones para el color y el fondo */
+}
+
+/* Efecto de cambio de color y fondo al pasar el cursor sobre las etiquetas 'a' */
+a.cgv:hover {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    /* Cambio de color de fondo al pasar el cursor a un tono de azul más fuerte */
+    transform: scale(1.1);
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* stylelint-disable stylistic/selector-list-comma-newline-after */
+
+.blog-header-logo:hover {
+    text-decoration: none;
+}
+
+.flex-auto {
+    flex: 0 0 auto;
+}
+
+.h-250 {
+    height: 250px;
+}
+
+/* Pagination */
+.blog-pagination {
+    margin-bottom: 4rem;
+}
+
+/*
+ * Blog posts
+ */
+.blog-post {
+    margin-bottom: 4rem;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid rgba(0, 0, 0, 0.15);
+    border-width: 1px 0;
+    box-shadow:
+        inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+        inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+    --bd-violet-bg: rgba(0, 0, 0, 0.7);
+    /* Negro con transparencia */
+    --bd-violet-rgb: 0, 0, 0;
+    /* Valor RGB correspondiente */
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: transparent;
+    /* Sin borde */
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #333;
+    /* Cambio de color hover a un tono más oscuro de negro */
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #222;
+    /* Cambio de color active a un negro más oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* Agrega un efecto de sombra */
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+/* Efecctos en las cartas inicio. El modulo de estas carta es: C:\xampp\htdocs\CGVertice\resources\views\sistema\CGV\includes\serviciosTeaser.blade.php  */
+/* CardServiciosTeaser */
+
+.card {
+    overflow: hidden;
+    transition: transform 1s;
+}
+
+.card .content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+        opacity 1s ease-in-out,
+        max-height 1s ease-in-out;
+}
+
+.card:hover .content {
+    opacity: 1;
+    max-height: 1000px;
+    /* Aumenta esto según el contenido */
+}
+
+.card .imgBx img {
+    width: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.search-input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    flex-grow: 1;
+    /* Permite que el campo de búsqueda crezca para llenar el espacio disponible */
+    margin-top: 5px;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.search .search-input {
+    padding: 0 10px;
+    width: 850px;
+    /* Utiliza el espacio disponible */
+    caret-color: #536bf6;
+    font-size: 21px;
+    font-weight: 300;
+    color: black;
+    transition: width 0.4s linear;
+}
+
+/* Estilos por defecto (sin media query) */
+.search .search-input {
+    width: 850px;
+    /* Utiliza el espacio disponible */
+}
+
+.search:hover > .search-icon {
+    background: #1a237e;
+    color: #fff;
+}
+
+.search-icon {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #536bf6;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+/* la carta del slider inicio */
+
+.card-slider {
+    width: 300px;
+    height: 400px;
+}
+
+.img-slider {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 5px !important;
+}
+
+.card-body {
+    padding: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+    /* Ajusta la altura del cuerpo de la tarjeta según tus necesidades */
+}
+
+.card-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 10px !important;
+}
+
+.card-text {
+    font-size: 0.9rem !important;
+}
+
+.text-muted {
+    font-size: 0.8rem !important;
+}
+
+/* la carta fin */
+
+.lSPager {
+    display: none;
+}
+
+.lSAction > a {
+    background-color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.lSAction > .lSNext::before {
+    content: ">";
+    font-size: 3rem;
+    color: #fff;
+    top: -25px;
+}
+
+.lSAction > .lSPrev::before {
+    content: "<";
+    font-size: 3rem;
+    color: #fff;
+    top: -25px;
+}
+
+.lSAction > a::before,
+.lSAction > a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* Estilos por defecto para pantallas grandes para las noticias de ultimo momento */
+.img-responsive {
+    max-width: 50% !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+img {
+    border-radius: 5px !important;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+#button-addon1 {
+    color: #ffc371;
+}
+
+i {
+    font-size: 20px;
+}
+
+.form-control::placeholder {
+    font-size: 0.95rem;
+}
+
+.form-control.shadow-0:focus {
+    box-shadow: none;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+/* stylelint-disable stylistic/selector-list-comma-newline-after */
+
+.blog-header-logo:hover {
+    text-decoration: none;
+}
+
+.flex-auto {
+    flex: 0 0 auto;
+}
+
+.h-250 {
+    height: 250px;
+}
+
+/* Pagination */
+.blog-pagination {
+    margin-bottom: 4rem;
+}
+
+/*
+   * Blog posts
+   */
+.blog-post {
+    margin-bottom: 4rem;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid rgba(0, 0, 0, 0.15);
+    border-width: 1px 0;
+    box-shadow:
+        inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+        inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+    --bd-violet-bg: rgba(0, 0, 0, 0.7);
+    /* Negro con transparencia */
+    --bd-violet-rgb: 0, 0, 0;
+    /* Valor RGB correspondiente */
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: transparent;
+    /* Sin borde */
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #333;
+    /* Cambio de color hover a un tono más oscuro de negro */
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #222;
+    /* Cambio de color active a un negro más oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* Agrega un efecto de sombra */
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Efecctos en las cartas inicio */
+
+a:link {
+    text-decoration: none;
+}
+
+.card-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 10px !important;
+}
+
+.card-body {
+    padding: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text {
+    font-size: 1rem !important;
+}
+
+.text-muted {
+    font-size: 0.8rem !important;
+}
+
+/* -------------------------------------------------------------------------------------- */
+@keyframes button-bounce {
+    0%,
+    30%,
+    60%,
+    100% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-15px);
+    }
+
+    40% {
+        transform: translateY(-7px);
+    }
+}
+
+.btn-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-jump {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease-out;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.btn-container:hover .btn-jump {
+    animation: button-bounce 1.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* la carta del slider inicio */
+
+.card-slider {
+    width: 300px;
+    height: 500px;
+}
+
+.img-slider {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 5px !important;
+}
+
+.lSPager {
+    display: none;
+}
+
+.lSAction > a {
+    background-color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.lSAction > .lSNext::before {
+    content: ">";
+    font-size: 3rem;
+    color: #fff;
+    top: -25px;
+}
+
+.lSAction > .lSPrev::before {
+    content: "<";
+    font-size: 3rem;
+    color: #fff;
+    top: -25px;
+}
+
+.lSAction > a::before,
+.lSAction > a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* Product page */
+.DescriptionP {
+    font-size: 20px;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+/* Media Query para Pantallas Pequeñas (Móviles) */
+@media (max-width: 767px) {
+    .h-md-250 {
+        height: 250px;
+    }
+
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+/* Media Query para Tablets en Modo Retrato */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .search .search-input {
+        width: 500px;
+        /* Ancho personalizado para tablets en modo retrato */
+    }
+}
+
+/* Media Query para Tablets en Modo Paisaje */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .search .search-input {
+        width: 700px;
+        /* Ancho personalizado para tablets en modo paisaje */
+    }
+}
+
+/* Media Query para Pantallas Medianas (Laptops y Escritorios Pequeños) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .search .search-input {
+        width: 800px;
+        /* Ancho personalizado para pantallas medianas */
+    }
+}
+
+/* Media Query para Pantallas Grandes (Escritorios) */
+@media (min-width: 1440px) {
+    .search .search-input {
+        width: 1000px;
+        /* Ancho personalizado para pantallas grandes (escritorios) */
+    }
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+/* Media Query para Pantallas Pequeñas (Móviles) */
+@media (max-width: 767px) {
+    .h-md-250 {
+        height: 250px;
+    }
+
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+
+    .search .search-input {
+        width: 100%;
+        /* Ancho completo en pantallas móviles */
+    }
+
+    .img-responsive {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        border-radius: 5px;
+    }
+}
+
+/* Media Query para Tablets en Modo Retrato */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .search .search-input {
+        width: 500px;
+        /* Ancho personalizado para tablets en modo retrato */
+    }
+}
+
+/* Media Query para Tablets en Modo Paisaje */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .search .search-input {
+        width: 700px;
+        /* Ancho personalizado para tablets en modo paisaje */
+    }
+}
+
+/* Media Query para Pantallas Medianas (Laptops y Escritorios Pequeños) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .search .search-input {
+        width: 800px;
+        /* Ancho personalizado para pantallas medianas */
+    }
+}
+
+/* Media Query para Pantallas Grandes (Escritorios) */
+@media (min-width: 1440px) {
+    .search .search-input {
+        width: 1000px;
+        /* Ancho personalizado para pantallas grandes (escritorios) */
+    }
+}
+
+.zoom-effect img {
+    transition: transform 1s ease;
+}
+
+.zoom-effect img:hover {
+    transform: scale(1.1);
+}
+
+.slider-grand {
+    background-color: #f8f9fa;
+    /* Color de fondo para resaltar el carrusel */
+    padding: 30px 0;
+    /* Ajuste el relleno según sea necesario */
+}
+
+.slider {
+    overflow: hidden;
+    /* Ocultar las partes del carrusel que están fuera de la vista */
+}
+
+.slide-track {
+    display: flex;
+    /* Alinea las diapositivas horizontalmente */
+}
+
+.slide {
+    flex: 0 0 auto;
+    /* Las diapositivas no se expanden para llenar el espacio */
+    margin-right: 20px;
+    /* Espacio entre las diapositivas */
+}
+
+.img-slider {
+    max-width: 200px;
+    /* Ancho máximo de las imágenes */
+    max-height: 100px;
+    /* Altura máxima de las imágenes */
+    display: block;
+    /* Asegura que las imágenes se muestren correctamente */
+    margin: 0 auto;
+    /* Centra las imágenes horizontalmente */
+}
+
+.dark-theme {
+    background-color: rgb(36, 36, 36);
+    color: white;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.slider {
+    display: inline-block;
+}
+
+.autoWidth {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+
+.autoWidth li {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    /* Espacio entre elementos del slider */
+}
+
+.item-a {
+    width: auto;
+    /* Ancho de cada elemento del slider */
+}
+
+.containerModal {
+    display: flex;
+    flex-direction: row;
+    border: #0071e3 1px solid;
+}
+
+.itemModal {
+    /* Estilos opcionales para los elementos individuales */
+    margin: 5px;
+    /* Margen entre los elementos */
+    padding: 10px;
+    /* Espaciado interno */
+    border: 1px solid #ccc;
+    /* Borde para los elementos */
+}
+
+.section-GestionD {
+    /* Para alinear los elementos verticalmente */
+    align-items: center;
+    /* Alinea los elementos horizontalmente en el centro */
+    height: auto;
+    background-image: url("../img/FondoFormacionALaMedida.jpg");
+    /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    /* Ajusta la imagen al tamaño del contenedor */
+
+    /* Centra la imagen */
+    margin: 0;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    /* Sombra ligera */
+    padding-top: 20px;
+    /* Ajusta este valor según sea necesario */
+}
+
+.section-GestionD .titulo {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #b8860b;
+    /* Texto oscuro sobre fondo claro */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    /* Sombra de texto */
+    margin-bottom: 20px;
+    /* Espacio debajo del título */
+}
+
+.nav-tabs {
+    margin-bottom: 20px;
+    /* Espacio debajo de las pestañas */
+}
+
+.section-aboutx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-image: url("../img/Ips.jpg");
+    /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center;
+    /* Centra la imagen */
+    margin: 0;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    /* Sombra ligera */
+}
+
+/* Estilos para el contenido de "Servicios" */
+.section-aboutx .content-GC {
+    /* Agrega un fondo casi transparente al contenido */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Ajusta la transparencia según tus preferencias */
+    padding: 20px;
+    /* Agrega espaciado alrededor del contenido */
+    height: auto;
+    width: auto;
+}
+
+.section-aboutx .titulo {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #000;
+    /* Texto oscuro sobre fondo claro */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    /* Sombra de texto */
+}
+
+.section-aboutx .texto {
+    font-size: 1.1rem;
+    color: #000;
+    /* Texto oscuro */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    /* Sombra de texto */
+}
+
+.espacio {
+    height: 200px;
+}
+
+.titulo-modal {
+    text-align: center;
+    color: #b8860b;
+    font-size: 30px;
+}
+
+.section-aboutips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-image: url("../img/DD.jpg");
+    /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center;
+    /* Centra la imagen */
+    margin: 0;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    /* Sombra ligera */
+}
+
+.MainContainerMap {
+    padding: 0% 0% 0% 6%;
+}
+
+/* Estilo por defecto (pantallas grandes) */
+.container-mapa {
+    position: relative;
+    width: 280%;
+    padding-top: 100%;
+}
+
+/* Pantallas medianas (tablet, entre 768px y 1024px) */
+@media (max-width: 1024px) {
+    .container-mapa {
+        width: 150%;
+        /* Ajusta este valor según sea necesario */
+        padding-top: 75%;
+        /* Ajusta este valor según sea necesario */
+    }
+}
+
+/* Pantallas pequeñas (móvil, menos de 768px) */
+@media (max-width: 768px) {
+    .container-mapa {
+        width: 100%;
+        /* Ajusta este valor según sea necesario */
+        padding-top: 50%;
+        /* Ajusta este valor según sea necesario */
+    }
+}
+
+.EncabezadoSer {
+    width: 50%;
+}
+
+.Centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.check-list {
+    list-style-type: none;
+    /* Remove default bullets */
+}
+
+.check-list li::before {
+    content: "✔ ";
+    /* Add check symbol before each list item */
+    color: #b8860b;
+    /* Optional: color the check symbol */
+    font-size: 2rem;
+}
+
+.gestionD_P {
+    background-color: #00000011;
+    width: 100%;
+    border: 2px solid #b8860b;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.gestionD_P p {
+    margin: 0 auto;
+    text-align: justify;
+    width: 80%;
+    font-family: "parrafos";
+}
+
+.gestionD_PU {
+    background-color: #00000011;
+    width: 55%;
+    border: 2px solid #b8860b;
+    padding: 2%;
+    border-radius: 40px;
+    margin-left: 22.5%;
+}
+
+.gestionD_PU p {
+    margin: 0 auto;
+    text-align: justify;
+    width: 80%;
+    font-family: "parrafos";
+}
+
+.DescipcionEstructura {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parrafoNuestrosServicios {
+    color: black;
+    font-size: 17px;
+}
+
+.imgNuestrosServicios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgNuestrosServicios img {
+    width: 80%;
+    height: auto;
+}
+
+.tituloNuestrosServicios {
+    color: black;
+    text-align: center;
+}
+
+.userRol {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.userRol .card {
+    width: auto;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 20px;
+    border: 10px solid;
+    box-shadow: 0 0 10px #b8860b;
+}
+
+.titulo-roles {
+    text-align: center;
+    color: #b8860b;
+    margin-top: 30px;
+}
+
+.TextoInicio {
+    padding: 2% 0% 0% 10%;
+}
+
+.MainTittle {
+    padding: 5% 0% 0% 20%;
+    justify-content: center;
+}
+
+.imgConverge {
+    height: 100px;
+}
+
+.tabla-index {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonAdmin {
+    margin: 0% 0% 0% 1%;
+    padding: 1%;
+}
+
+.cardhead {
+    font-size: 100%;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.dropdown-menu li a {
+    color: #b8860b;
+    padding: 10px;
+}
+
+.LoginForm {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 100vh;
+    /* Opcional: asegura que el div ocupe toda la altura de la ventana */
+}
+
+/* boton dentro de l tab de clientes en la pantalla de inicio */
+.btnClientes {
+    text-align: center;
+    margin: 30px 0px 10px 0px;
+}
+
+/* Estilos de tabquinessomos cuando se rediseñó */
+.tituloQuienesSomos {
+    font-size: 2rem;
+    color: #b8860b;
+    margin: 20px 0px 20px 0px;
+}
+
+.parrafoQuienesSomos {
+    text-align: center;
+    color: #000;
+}
+
+/* estilos del area de descripcion de los servicios en la vista welcome */
+.navbarServicios {
+    display: none;
+}
+
+.containerTitulo{
+    text-align: center;
+}
+
+.TituloNavServicios {
+    font-size: 1.8rem;
+    color: #b8860b;
+    margin: 20px 0px;
+    cursor: pointer;
+    position: relative; /* Necesario para que la mano se posicione en relación al h4 */
+}
+
+.parrafoServicios {
+    border: 2px solid #b8860b;
+    border-radius: 20px;
+    margin: 2% 5%;
+}
+
+.parrafoServicios p {
+    margin: 3px;
+    padding: 5px;
+}
+
+.subTituloServicios p {
+    text-align: center;
+    color: #b8860b;
+}
+
+.subTituloServicios ul {
+    list-style-type: none;
+}
+
+.titulo-con-animacion {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+/* La mano haciendo clic */
+.mano-clic {
+    position: absolute;
+    top: 100%; /* Ajuste para que empiece más abajo */
+    right: -20px; /* Más cerca de las letras */
+    font-size: 24px;
+    color: white;
+    transform: translateY(-10px); /* Empieza un poco arriba */
+    animation: clickAnim 1.5s infinite ease-in-out;
+}
+
+/* Animación del clic de abajo hacia arriba */
+@keyframes clickAnim {
+    0%, 100% {
+        transform: translateY(0); /* Termina en la posición de inicio */
+    }
+    50% {
+        transform: translateY(-30px) scale(1.1); /* Sube y se agranda para simular el clic */
+    }
+    80% {
+        transform: translateY(-25px) scale(0.9); /* 'Presiona' hacia abajo para simular el clic */
+    }
+}
