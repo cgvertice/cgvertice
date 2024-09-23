@@ -1,3 +1,23 @@
+<head>
+    <title>Corporate Group Vértice</title>
+</head>
+
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="shortcut icon" href="../img/LogoAgosto.png" type="image/x-icon" />
+<link rel="stylesheet" href="../css/cdn.jsdelivr.net_npm_bootstrap@5.3.2_dist_css_bootstrap.min.css" />
+<link rel="stylesheet" href="../css/cdnjs.cloudflare.com_ajax_libs_lightslider_1.1.6_css_lightslider.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+<div class="col-lg-1 col-md-1 col-1 text-center mt-2">
+    <div class="Converge-div-logoCasa">
+        <a href="{{ route('inicio') }}" class="btn btn-outline-warning">
+            <i class="fas fa-home"></i>
+        </a>
+    </div>
+</div>
+
+
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
