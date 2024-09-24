@@ -72,10 +72,21 @@
                 </div>
                 <!-- Sección "Compañia" -->
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 text-center">
-                    <h6 class="text-uppercase font-weight-bold mb-4" style="color: #b8860b">Compañía</h6>
+                    <h6 class="text-uppercase font-weight-bold mb-4" style="color: #b8860b">Páginas de interes</h6>
                     <ul class="list-unstyled mb-0">
-                        <a href="/V2" class="link-underline-light" style="color:rgb(121, 121, 121)">Nuestros
-                            servicios</a>
+                        <a href="https://www.mineducacion.gov.co/portal/" class="link-underline-light" style="color:rgb(121, 121, 121)">Min. de educación</a>
+                    </ul>
+                    <ul class="list-unstyled mb-0">
+                        <a href="https://www.mintrabajo.gov.co/web/guest/inicio" class="link-underline-light" style="color:rgb(121, 121, 121)">Min. de trabajo</a>
+                    </ul>
+                    <ul class="list-unstyled mb-0">
+                        <a href="https://www.minsalud.gov.co/Portada/index.html" class="link-underline-light" style="color:rgb(121, 121, 121)">Ministerio de salud</a>
+                    </ul>
+                    <ul class="list-unstyled mb-0">
+                        <a href="https://www.medellin.gov.co/es/secretaria-de-salud/" class="link-underline-light" style="color:rgb(121, 121, 121)">Secretaría de salud</a>
+                    </ul>
+                    <ul class="list-unstyled mb-0">
+                        <a href="https://www.medellin.gov.co/es/secretaria-medio-ambiente/" class="link-underline-light" style="color:rgb(121, 121, 121)">Secretaría de ambiente</a>
                     </ul>
                 </div>
                 <!-- Sección "Politica" -->
