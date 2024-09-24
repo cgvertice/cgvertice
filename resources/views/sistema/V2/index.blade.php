@@ -121,38 +121,104 @@
                             </button>
                         </div>
                     @endcan
-                    <div class="row mt-4">
-                        @foreach ($V2 as $producto)
-                            <div class="col-md-3 mb-4"> <!-- Ajusta la clase col-md-3 según tus necesidades -->
-                                <div class="card shadow-sm">
-                                    <div class="container py-3">
-                                        <div class="container">
-                                            <strong class="d-inline-block fs-5">{{ $producto->nombre }}</strong>
-                                        </div>
-                                    </div>
-                                    <div class="container-just text-center">
-                                        <div class="container">
-                                            <img src="{{ asset('imagenesProducto/img/' . $producto->imagen) }}"
-                                                class="img-fluid rounded"
-                                                alt="Error con la carga de la imagen para el producto para la camilla de emergencia preciona F5 para solucionarlo"
-                                                style="width: 250px; height: 250px;">
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="container">
-                                            <div class="d-grid gap-2">
-                                                <a href="https://wa.me/573016280574?text=Quiero%20comprar%20sus%20productos."
-                                                    target="_blank" rel="noopener noreferrer"
-                                                    class="btn btn-secondary btn-sm">Comprar Ahora en WhatsApp</a>
-                                                <a href="{{ route('producto.informacion', ['id' => $producto->idProducto]) }}"
-                                                    class="btn btn-outline-warning btn-sm">Más información</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+                    <!-- Botón para abrir el modal del carrito -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#carritoModal">
+    Ver Carrito
+</button>
+
+<!-- Vista de Productos (el código que ya proporcionaste) -->
+<div class="row mt-4">
+    @foreach ($V2 as $producto)
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm">
+                <div class="container py-3">
+                    <strong class="d-inline-block fs-5">{{ $producto->nombre }}</strong>
+                </div>
+                <div class="container-just text-center">
+                    <img src="{{ asset('imagenesProducto/img/' . $producto->imagen) }}"
+                         class="img-fluid rounded" alt="Producto" style="width: 250px; height: 250px;">
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{{ route('carrito.add', $producto->idProducto) }}"
+                           class="btn btn-secondary btn-sm">Agregar al Carrito</a>
+                        <a href="{{ route('producto.informacion', ['id' => $producto->idProducto]) }}"
+                           class="btn btn-outline-warning btn-sm">Más información</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>
+
+<!-- Modal del Carrito -->
+<div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @if (session('cart') && count(session('cart')) > 0)
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php $total = 0; @endphp
+                            @foreach (session('cart') as $id => $item)
+                                <tr>
+                                    <td>{{ $item['name'] }}</td>
+                                    <td>${{ number_format($item['price'], 2) }}</td>
+                                    <td>{{ $item['quantity'] }}</td>
+                                    <td>${{ number_format($item['price'] * $item['quantity'], 2) }}</td>
+                                    <td>
+                                        <form action="{{ route('carrito.remove', $id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @php $total += $item['price'] * $item['quantity']; @endphp
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class="text-end">
+                        <strong>Total: ${{ number_format($total, 2) }}</strong>
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="https://wa.me/573217462196?text=Quiero%20comprar%20los%20siguientes%20productos:%0A%0A @foreach (session('cart') as $item) {{ $item['name'] }} - Cantidad: {{ $item['quantity'] }}%0A @endforeach"
+                           class="btn btn-success" target="_blank" rel="noopener noreferrer">
+                            Finalizar Compra
+                        </a>
+                    </div>
+                    <div class="text-end mt-3">
+                        <form action="{{ route('carrito.clear') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-warning">Vaciar Carrito</button>
+                        </form>
+                    </div>
+                @else
+                    <p>No hay productos en el carrito.</p>
+                @endif
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
                 </div>
                 @include('sistema.V2.create')
             </div>

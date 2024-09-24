@@ -55,6 +55,11 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('users', UserController::class);
         Route::post('/create-all-roles', [RoleController::class, 'createAllRoles'])->name('create-all-roles');
         Route::post('/create-all-permisos', [PermisoController::class, 'createAllPermisos'])->name('create-all-permisos');
+        Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+        Route::get('/carrito', [ProductoController::class, 'showCart'])->name('carrito.index');
+        Route::get('/carrito/add/{id}', [ProductoController::class, 'addToCart'])->name('carrito.add');
+        Route::delete('/carrito/remove/{id}', [ProductoController::class, 'removeFromCart'])->name('carrito.remove');
+        Route::post('/carrito/clear', [ProductoController::class, 'clearCart'])->name('carrito.clear');
     });
 
     Route::resource('productos', ProductoController::class);

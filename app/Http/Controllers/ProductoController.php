@@ -164,4 +164,60 @@ class ProductoController extends Controller
             return response()->json(['error' => 'No puedes eliminar el último producto.'], 400);
         }
     }
+
+     // Método para añadir un producto al carrito
+     public function addToCart($id)
+     {
+         $producto = Producto::find($id); // Busca el producto por ID
+         
+         if ($producto) {
+             // Inicializa el carrito si no existe
+             if (!session()->has('cart')) {
+                 session(['cart' => []]);
+             }
+             
+             // Añadir producto al carrito
+             $cart = session('cart');
+             if (isset($cart[$id])) {
+                 $cart[$id]['quantity']++; // Incrementa la cantidad si ya existe
+             } else {
+                 $cart[$id] = [
+                     'name' => $producto->nombre,
+                     'price' => $producto->precio, // Asegúrate de que el modelo tenga este atributo
+                     'quantity' => 1
+                 ];
+             }
+             session(['cart' => $cart]);
+         }
+ 
+         return redirect()->route('productos.index')->with('success', 'Producto añadido al carrito.');
+     }
+ 
+     // Método para mostrar el carrito
+     public function showCart()
+     {
+         $cart = session('cart', []); // Obtiene el carrito de la sesión
+         return view('sistema.carrito.index', compact('cart')); // Cambia 'carrito.index' por la vista que tengas para el carrito
+     }
+
+     public function removeFromCart($id)
+{
+    $cart = session()->get('cart');
+
+    // Verifica si el producto está en el carrito
+    if (isset($cart[$id])) {
+        // Elimina el producto del carrito
+        unset($cart[$id]);
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Producto eliminado del carrito.');
+    }
+
+    return redirect()->back()->with('error', 'Producto no encontrado en el carrito.');
+}
+
+public function clearCart()
+{
+    session()->forget('cart'); // Elimina todo el carrito de la sesión
+    return redirect()->back()->with('success', 'Carrito vaciado exitosamente.');
+}
 }
