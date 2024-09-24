@@ -3,8 +3,8 @@
 /public/build
 /public/hot
 /public/imagenesBlog/img
+/public/imagenesBlog/videos
 /public/imagenesProducto/img
-/public/videos
 /public/storage
 /storage/*.key
 /vendor
