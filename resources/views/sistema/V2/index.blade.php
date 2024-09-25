@@ -194,8 +194,13 @@
                     <div class="text-end">
                         <strong>Total: ${{ number_format($total, 2) }}</strong>
                     </div>
+
                     <div class="text-end mt-3">
-                        <a href="https://wa.me/573217462196?text=Quiero%20comprar%20los%20siguientes%20productos:%0A%0A @foreach (session('cart') as $item) {{ $item['name'] }} - Cantidad: {{ $item['quantity'] }}%0A @endforeach"
+                        <a href="https://wa.me/573126624671?text=Quiero%20comprar%20los%20siguientes%20productos:%0A%0A
+                        @foreach (session('cart') as $item)
+                            - Producto: {{ $item['name'] }}  - Cantidad: {{ $item['quantity'] }} %0A
+                        @endforeach
+                        %0A- Total a pagar: {{ number_format($total)}}"
                            class="btn btn-success" target="_blank" rel="noopener noreferrer">
                             Finalizar Compra
                         </a>
