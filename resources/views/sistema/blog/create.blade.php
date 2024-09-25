@@ -250,9 +250,6 @@
     xhr.send(formData);
 }
 
-
-
-
     document.getElementById('NombreN').addEventListener('input', validarNombre);
     document.getElementById('Imagen').addEventListener('change', validarImagen);
     document.getElementById('DescripcionN').addEventListener('input', validarDescripcion);
