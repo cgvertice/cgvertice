@@ -80,5 +80,6 @@ Route::post('reset-password', [NewPasswordController::class, 'reset'])
     ->name('password.update');
 
 Route::post('/blogs/uploadMultimedia', [ConvergeController::class, 'uploadMultimedia'])->name('blogs.uploadMultimedia');
+Route::post('/blogs/deleteMultimedia', [ConvergeController::class, 'deleteMultimedia'])->name('blogs.deleteMultimedia');
 
     

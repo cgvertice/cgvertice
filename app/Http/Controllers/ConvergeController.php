@@ -90,6 +90,28 @@ public function uploadMultimedia(Request $request)
     ]);
 }
 
+public function deleteMultimedia(Request $request)
+{
+    $rutaImagen = $request->input('rutaImagen');
+    $rutaVideo = $request->input('rutaVideo');
+
+    // Eliminar imagen si existe
+    if ($rutaImagen && file_exists(public_path($rutaImagen))) {
+        unlink(public_path($rutaImagen));
+    }
+
+    // Eliminar video si existe
+    if ($rutaVideo && file_exists(public_path($rutaVideo))) {
+        unlink(public_path($rutaVideo));
+    }
+
+    // Retornar respuesta en JSON confirmando la eliminación
+    return response()->json([
+        'mensaje' => 'Archivos eliminados correctamente',
+    ]);
+}
+
+
 
 
     /**
@@ -100,51 +122,33 @@ public function uploadMultimedia(Request $request)
         $request->validate([
             'NombreE' => 'required',
             'DescripcionE' => 'required',
-            'ImagenE' => $request->hasFile('ImagenE') ? 'image|mimes:jpeg,png,jpg|max:2048' : '',
-            'VideoE' => $request->hasFile('VideoE') ? 'mimetypes:video/avi,video/mp4,video/mpeg|max:50000' : '',
             'OpcionE' => 'required',
             'AutorE' => 'required|string|max:255',
-            'UrlE' => 'nullable|url'
+            'UrlE' => 'nullable|url',
+            'rutaImagen' => 'required|string',  // Ruta de la imagen debe ser requerida
+            'rutaVideo' => 'nullable|string'    // Video opcional
+            
         ]);
     
         $blogs = Converge::find($id);
-    
-        // Procesar imagen si se actualiza
-        if ($request->hasFile('ImagenE')) {
-            $imagen = $request->file('ImagenE');
-            $nombreImagen = time() . '.' . $imagen->getClientOriginalExtension();
-            $rutaImagen = 'imagenesBlog/img/' . $nombreImagen;
-            $imagen->move(public_path('imagenesBlog/img/'), $nombreImagen);
-    
-            // Eliminar la imagen anterior si existe
-            if ($blogs->foto && file_exists(public_path($blogs->foto))) {
-                unlink(public_path($blogs->foto));
-            }
-    
-            $blogs->foto = $rutaImagen;
+
+        if ($blogs->foto && file_exists(public_path($blogs->foto))){
+            unlink(public_path($blogs->foto));
         }
-    
-        // Procesar video si se actualiza
-        if ($request->hasFile('VideoE')) {
-            $video = $request->file('VideoE');
-            $nombreVideo = time() . '.' . $video->getClientOriginalExtension();
-            $rutaVideo = 'videos/videos/' . $nombreVideo;
-            $video->move(public_path('videos/videos'), $nombreVideo);
-    
-            // Eliminar el video anterior si existe
-            if ($blogs->video && file_exists(public_path($blogs->video))) {
-                unlink(public_path($blogs->video));
-            }
-    
-            $blogs->video = $rutaVideo;
+
+        if ($blogs->video && file_exists(public_path($blogs->video))){
+            unlink(public_path($blogs->video));
         }
-    
+
+
         // Actualizar otros campos
         $blogs->nombre_noticia = $request->input('NombreE');
         $blogs->descripcion_noticia = $request->input('DescripcionE');
         $blogs->opcion = $request->input('OpcionE');
         $blogs->author = $request->input('AutorE');
         $blogs->url = $request->input('UrlE');
+        $blogs->foto = $request->input('rutaImagen');
+        $blogs->video = $request->input('rutaVideo');
     
         $blogs->save();
     
