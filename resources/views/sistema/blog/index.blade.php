@@ -72,7 +72,6 @@
                             <div class="imgcontainer">
                                 <img src="{{ asset($blogg->foto) }}" class="img-fluid rounded">
                             </div>
-                            
                             <p class="NombreNoticias">{{ $blogg->nombre_noticia }}</p>
                             <div class="CardBlogBtn">
                                 <button type="button" class="btn btn-warning mt-3" data-bs-toggle="modal"
@@ -121,7 +120,7 @@
                                         <hr>
                                         @if ($blogg->video)
                                             <video id="video{{ $blogg->id }}" width="100%" controls>
-                                                <source src="{{ asset($blogg->video) }}" type="video/mp4">
+                                                <source src="{{ asset($blogg->video) }}" type="video/mp4" alt="Video alternativo">
                                                 Tu navegador no soporta el elemento de video.
                                             </video>
                                         @else
