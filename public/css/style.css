@@ -112,20 +112,9 @@ a {
     justify-content: center;
 }
 
-/*  */
-ul {
-    margin-bottom: 10px;
-    /* Ajusta este valor según tus necesidades */
-}
-
-ul li {
-    margin-bottom: 5px;
-    /* Ajusta este valor según tus necesidades */
-}
-
 .logo-cgv {
     position: relative;
-    max-width: 80px;
+    max-width: 75px;
     width: auto;
     height: auto;
     text-align: center;
@@ -2345,4 +2334,29 @@ a:link {
     80% {
         transform: translateY(-25px) scale(0.9); /* 'Presiona' hacia abajo para simular el clic */
     }
+}
+
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Esto crea tres columnas iguales */
+    gap: 5%; /* Espacio entre los contenedores */
+    height: 100vh; /* Ajusta si necesitas un alto completo */
+    padding: 5% 5%;
+}
+
+.contenedor-interno {
+    background-color: rgb(230, 229, 229); /* Solo para visualización */
+    padding: 15px;
+    border-radius: 5%;
+}
+
+.Upcontainer{
+    height: 45%;
+    border: #000 1px solid;
+}
+
+.DownContainer{
+    height: 45%;
+    margin-top: 6%;
+    border: #000 1px solid;
 }

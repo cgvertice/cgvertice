@@ -5,17 +5,13 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black;">
         <div class="container MainNavbar">
             <!-- Logo -->
-            <a id="logoInicio">
+            <a>
                 <img class="logo-cgv" src="{{ asset('img/logoo.png') }}" alt="Logo de Vértice">
             </a>
             <!-- Botón del menú Offcanvas para pantallas pequeñas -->
-            <button class="navbar-toggler custom-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <!-- Menú de Navegación -->
             <div class="collapse navbar-collapse navbar">
-                <ul class="navbar-nav ms-auto">
+                <ul>
                     @can('Admin Configuracion')
                         <li class="nav-item dropdown configadmin">
                             <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +29,7 @@
                     <li><a href="{{ route('ruta_blog') }}">Converge</a></li>
                     <li><a href="{{ route('ruta_V2') }}">V2suministros</a></li>
                     <li><a href="{{ route('ruta_ceet') }}">Ceet</a></li>
-                        <li class="servicios"><a href="{{ route('ruta_services') }}">Servicios</a>
+                        <li><a href="{{ route('ruta_services') }}">Servicios</a>
                             <ul class="name">
                             <li><a href="/servicios#GestioenEmpresas">Gestión empresas</a>
                                 <ul class="topic">
@@ -69,6 +65,7 @@
                             </ul>
                         </li>
                     </div>
+                    
                 </ul>
                 <div class="nav-item dropdown">
                     @auth
@@ -86,6 +83,9 @@
                         </div>
                     @endauth
                 </div>
+                <button class="navbar-toggler custom-toggler bg-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <!-- Formulario de cierre de sesión -->
                 <form id="logoutForm" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -105,6 +105,7 @@
                 <li><a href="{{ route('nosotros') }}">Nosotros</a></li>
                 <li><a href="{{ route('ruta_blog') }}">Converge</a></li>
                 <li><a href="{{ route('ruta_V2') }}">V2suministros</a></li>
+                <li><a href="{{ route('ruta_ceet') }}">Ceet</a></li>
                 <li><a href="{{ route('ruta_services') }}">Servicios</a></li>
             </ul>
             <div class="offcanvas-body">
