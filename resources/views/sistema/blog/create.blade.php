@@ -143,7 +143,7 @@
     if (formularioValido) {
         enviarFormularioConProgreso(); // Llama la función que maneja la subida con progreso
     } else {
-        mostrarSweetAlert('error', 'Error', 'Por favor, complete todos los campos obligatorios.');
+        mostrarSweetAlert('error', 'Error', 'Por favor, complete todos los campos obligatorios.'); //aqui va el
     }
 }
 

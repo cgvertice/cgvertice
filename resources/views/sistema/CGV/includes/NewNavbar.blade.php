@@ -32,6 +32,7 @@
                     <li><a href="{{ route('nosotros') }}">Nosotros</a></li>
                     <li><a href="{{ route('ruta_blog') }}">Converge</a></li>
                     <li><a href="{{ route('ruta_V2') }}">V2suministros</a></li>
+                    <li><a href="{{ route('ruta_ceet') }}">Ceet</a></li>
                         <li class="servicios"><a href="{{ route('ruta_services') }}">Servicios</a>
                             <ul class="name">
                             <li><a href="/servicios#GestioenEmpresas">Gestión empresas</a>

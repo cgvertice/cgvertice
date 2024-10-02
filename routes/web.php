@@ -3,6 +3,7 @@
 use App\Http\Controllers\AsignarController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\CeetController;
 use App\Http\Controllers\ConvergeController;
 use App\Http\Controllers\DetalleProductoController;
 use App\Http\Controllers\PermisoController;
@@ -33,6 +34,7 @@ Route::get('/GestiónEmpresarial', [ProyectoController::class, 'indexGestionE'])
 Route::get('/GestionEmpresas', [ProyectoController::class, 'indexGestionEmpresas'])->name('ruta_GEmpresas');
 Route::get('/IPSGerencial', [ProyectoController::class, 'indexIPS'])->name('ruta_IPS');
 Route::get('/V2', [ProductoController::class, 'index'])->name('ruta_V2');
+Route::get('/ceet', [CeetController::class, 'index'])->name('ruta_ceet');
 Route::get('/V2/BotiquinTipoA', [ProyectoController::class, 'indexBotiquin'])->name('ruta_botiquin');
 Route::get('/Blog', [ConvergeController::class, 'index'])->name('ruta_blog');
 Route::get('/Seguridad', [ProyectoController::class, 'indexSeguridad'])->name('ruta_Seguridad');
