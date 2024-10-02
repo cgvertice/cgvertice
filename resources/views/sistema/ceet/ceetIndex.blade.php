@@ -42,38 +42,54 @@
 
 
 
-    {{-- <div class="row">
-        <div class="p-4 rounded bg-body-secondary contenedor-principal">
-            <div class="contenedor-interno">Contenido 1
-                <div class="Upcontainer">
-                    <div class="imgBx">
-                        <img src={{ asset('img/Inicio-destacados-sst.jpg') }} alt="Educación y Formación.png">
-                    </div>
-                </div>
-                <div class="DownContainer">
-
+    <div class="contenedor-principal">
+        <div class="contenedor-interno">
+            <div class="Upcontainer">
+                <div class="imgCeet">
+                    <img src={{ asset('img/Inicio-destacados-sst.jpg') }} alt="Educación y Formación.png">
                 </div>
             </div>
-            <div class="contenedor-interno">Contenido 2
-                <div class="Upcontainer">
-
-                </div>
-                <div class="DownContainer">
-
-                </div>
+            <div class="DownContainer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores numquam omnis velit possimus.
+                    Rerum, ducimus dicta laudantium incidunt perspiciatis sed nulla magni praesentium natus fuga dolorem
+                    placeat debitis accusantium.</p>
             </div>
-            <div class="contenedor-interno">Contenido 3
-                <div class="Upcontainer">
-
-                </div>
-                <div class="DownContainer">
-
+        </div>
+        <div class="contenedor-interno">
+            <div class="Upcontainer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores numquam omnis velit possimus.
+                    Rerum, ducimus dicta laudantium incidunt perspiciatis sed nulla magni praesentium natus fuga dolorem
+                    placeat debitis accusantium.</p>
+            </div>
+            <div class="DownContainer">
+                <div class="imgCeet">
+                    <img src={{ asset('img/Inicio-destacados-sst.jpg') }} alt="Educación y Formación.png">
                 </div>
             </div>
         </div>
-    </div> --}}
+        <div class="contenedor-interno">
+            <div class="Upcontainer">
+                <div class="imgCeet">
+                    <img src={{ asset('img/Inicio-destacados-sst.jpg') }} alt="Educación y Formación.png">
+                </div>
+            </div>
+            <div class="DownContainer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores numquam omnis velit possimus.
+                    Rerum, ducimus dicta laudantium incidunt perspiciatis sed nulla magni praesentium natus fuga dolorem
+                    placeat debitis accusantium.</p>
+            </div>
+        </div>
+    </div>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
