@@ -26,7 +26,7 @@
         <div class="parrafoServicios">
             <p>En GC-Vertice nos importa tu tiempo, por eso diseñamos este espacio para que ubiques de manera agil el
                 servicio que estas buscando, navegando a la seccion sevicios y buscando el sub-grupo que contiene el la
-                informacion del servicio de tu interes <strong>!Bienvenido!!</strong>
+                informacion del servicio de tu interes <strong>!Bienvenido!</strong>
             </p>
         </div>
 

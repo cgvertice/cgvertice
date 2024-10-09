@@ -21,7 +21,7 @@
     @include('sistema.CGV.includes.boton')
     @include('sistema.CGV.includes.regresarArriba')
 
-    <main>
+    <main class="ContentCeet">
         <div class="p-2  rounded bg-body-secondary">
             <div class="text-center">
                 <img src={{ asset('../img/ceet.png') }} alt="Logotipo Ceet" class="img-fluid" style="height: 180px" />
@@ -37,67 +37,86 @@
                     sostenible. ¡Juntos construimos un futuro más responsable!
                 </p>
             </div>
+            <div class="BTNceet">   
+                <a href="https://ceet.cgvertice.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-warning btn-lg" type="button">¡Presiona aquí!</a>
+            </div>
         </div>
+        
+
+        @include('sistema.CGV.includes.card')
+
+        <div class="BTNceet">
+            <p class="card-text">¿Quieres tener la oportunidad de inscribirte a nuestros cursos y expandir tus
+                conocimientos?
+            </p>
+        </div>
+        <div>
+            <div class="BTNceet">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    ¡Inscribete!
+                </button>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Matriculate CEET</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="registrationForm">
+                                <div class="form-group">
+                                    <label for="InputName">Nombre(s)</label>
+                                    <input type="text" class="form-control" id="InputName" placeholder="Nombre" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="InputLastName">Apellido(s)</label>
+                                    <input type="text" class="form-control" id="InputLastName" placeholder="Apellido" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="InputEmail">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="InputEmail" placeholder="Correo" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="InputID">Número de identificación</label>
+                                    <input type="text" class="form-control" id="InputID" placeholder="ID" required>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" onclick="sendToWhatsApp()">Matriculate</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
     </main>
-
-
-
-    <div class="contenedor-principal">
-        <div class="contenedor-interno">
-            <div class="Upcontainer">
-                <div class="imgCeet">
-                    <img src={{ asset('img/Inicio-destacados-sst.jpg') }} alt="Educación y Formación.png">
-                </div>
-            </div>
-            <div class="DownContainer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores numquam omnis velit possimus.
-                    Rerum, ducimus dicta laudantium incidunt perspiciatis sed nulla magni praesentium natus fuga dolorem
-                    placeat debitis accusantium.</p>
-            </div>
-        </div>
-        <div class="contenedor-interno">
-            <div class="Upcontainer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores numquam omnis velit possimus.
-                    Rerum, ducimus dicta laudantium incidunt perspiciatis sed nulla magni praesentium natus fuga dolorem
-                    placeat debitis accusantium.</p>
-            </div>
-            <div class="DownContainer">
-                <div class="imgCeet">
-                    <img src={{ asset('img/Inicio-destacados-sst.jpg') }} alt="Educación y Formación.png">
-                </div>
-            </div>
-        </div>
-        <div class="contenedor-interno">
-            <div class="Upcontainer">
-                <div class="imgCeet">
-                    <img src={{ asset('img/Inicio-destacados-sst.jpg') }} alt="Educación y Formación.png">
-                </div>
-            </div>
-            <div class="DownContainer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores numquam omnis velit possimus.
-                    Rerum, ducimus dicta laudantium incidunt perspiciatis sed nulla magni praesentium natus fuga dolorem
-                    placeat debitis accusantium.</p>
-            </div>
-        </div>
-    </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
 
     @include('sistema.CGV.includes.footer')
     @include('sistema.CGV.includes.botonWhatsapp')
 
     <script src={{ asset('../js/color-modes.js') }}></script>
 </body>
+<script>
+    function sendToWhatsApp() {
+        const name = document.getElementById('InputName').value;
+        const lastName = document.getElementById('InputLastName').value;
+        const email = document.getElementById('InputEmail').value;
+        const id = document.getElementById('InputID').value;
+    
+        const message = `Hola, me interesa matricularme en CEET para sus cursos virtuales. Estos son mis datos:\nNombre: ${name}\nApellido: ${lastName}\nCorreo: ${email}\nID: ${id}`;
+        const phoneNumber = '3217462196'; // Reemplaza con el número de teléfono deseado
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+        window.open(whatsappUrl, '_blank');
+    }
+    </script>
 
 </html>

@@ -4,7 +4,7 @@
             <img src={{ asset('img/LogoVertice200x177.png') }} alt="Logo de Vértice">
         </div>
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="qs-tab" data-bs-toggle="tab" data-bs-target="#qs" type="button"
                     role="tab" aria-controls="qs" aria-selected="true">¿Quiénes
