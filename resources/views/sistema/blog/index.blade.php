@@ -23,8 +23,44 @@
     @include('sistema.CGV.includes.regresarArriba')
 
     <main class="container">
+
+        <section class="section-about-video">
+            <div class="container col-xxl-12 ">
+                <div class="row flex-lg-row-reverse">
+                    <div class="col-12 col-sm-12 col-lg-9 align-items-center">
+                        <div class="ratio ratio-16x9">
+                            <iframe  class="col-12 col-sm-12 col-lg-9 align-items-center" width="100%" height="100%" src={{ asset('/img/logoanimado.gif') }}
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-lg-3">
+                        <div class="col-lg-12 text-center">
+                            <h1 class="display-4" style="color:#b8860b">¡Bienvenidos a Converge!</h1>
+                            <p>
+                                Nos alegra que te unas a nuestra comunidad de información. En Converge, estamos comprometidos a
+                                ofrecerte las noticias más actuales, relevantes y confiables del panorama global. Ya sea política,
+                                economía, tecnología, entretenimiento o deportes, nuestro objetivo es mantenerte bien informado y al
+                                tanto de los acontecimientos más importantes del momento.
+            
+                                Aquí, no solo reportamos noticias, también fomentamos el diálogo y la reflexión. Queremos ser tu
+                                fuente de información confiable y tu espacio para el intercambio de ideas.
+            
+                                Gracias por confiar en nosotros para mantenerte informado. ¡Vamos a converger en la verdad y el
+                                conocimiento!.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Div del Bienvenidos y la imagen -->
-        <div class="p-4 rounded bg-body-secondary" style="display: flex; flex-direction:column; ">
+        {{-- ESTE ES EL CÓDIGO ANTIGUO DE LA PRESENTACIÓN DE CONVERGE --}}
+        {{-- <div class="p-4 rounded bg-body-secondary" style="display: flex; flex-direction:column; ">
             <div class="col-lg-12 text-center">
                 <img src={{ asset('../img/Converge.png') }} alt="Logotipo Converge" class="img-fluid" style="height: 350px" />
             </div>
@@ -43,7 +79,7 @@
                     conocimiento!.
                 </p>
             </div>
-        </div>
+        </div> --}}
         <br>
         <div class="container py-1">
             <hr>
