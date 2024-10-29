@@ -54,49 +54,10 @@
         <div>
             <div class="BTNceet">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    ¡Inscribete!
+                <button type="button" class="btn btn-warning" onclick="window.open('https://forms.gle/8SMLABK5Gm1775QC8', '_blank')">
+                    ¡Inscríbete!
                 </button>
-            </div>
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Matriculate CEET</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="registrationForm">
-                                <div class="form-group">
-                                    <label for="InputName">Nombre(s)</label>
-                                    <input type="text" class="form-control" id="InputName" placeholder="Nombre" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <label for="InputLastName">Apellido(s)</label>
-                                    <input type="text" class="form-control" id="InputLastName" placeholder="Apellido" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <label for="InputEmail">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="InputEmail" placeholder="Correo" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <label for="InputID">Número de identificación</label>
-                                    <input type="text" class="form-control" id="InputID" placeholder="ID" required>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" onclick="sendToWhatsApp()">Matriculate</button>
-                        </div>                        
-                    </div>
-                </div>
-            </div>
+            </div>     
     </main>
 
     @include('sistema.CGV.includes.footer')

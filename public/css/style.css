@@ -2366,3 +2366,62 @@ a:link {
 .BTNceet button{
     margin-top: 2%;
 }
+
+/* estilos pagina ceet */
+.section-converge-video {
+    padding-top: 50px;
+}
+
+/* Estilo para el contenedor del video */
+.section-converge-video .col-lg-6 {
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+    background-color: #1a1a1a;
+    /* Fondo negro para el video */
+    color: #b8860b;
+    /* Texto blanco en el video */
+    padding: 20px;
+    border: 1px solid #b8860b;
+    /* Borde ligero alrededor del video */
+    transition: all 0.3s;
+    /* Transición suave */
+    display: flex;
+    /* Utilizar flexbox para alinear elementos */
+    align-items: center;
+    /* Centrar verticalmente el contenido */
+}
+
+/* Efecto al pasar el mouse sobre el contenedor del video */
+.section-ceet-video .col-lg-6:hover {
+    color: #000;
+    /* Texto oscuro al pasar el mouse */
+    transform: scale(1.05);
+    /* Escalar al pasar el mouse */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /* Sombra más pronunciada al pasar el mouse */
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+}
+
+/* Estilo para las columnas de la derecha */
+.section-converge-video .col-lg-6 {
+    background-color: black;
+    /* Cambiar el fondo a un tono rojizo */
+    color: #b8860b;
+    /* Texto oscuro en la columna 3 */
+    padding: 20px;
+    border: 1px solid #b8860b;
+    transition: all 0.3s;
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+}
+
+/* Efecto al pasar el mouse sobre las columnas de la derecha */
+.section-converge-video .col-lg-6:hover {
+    background-color: #1a1a1a;
+    /* Mantener el tono rojizo al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    /* Añadir bordes redondos */
+}

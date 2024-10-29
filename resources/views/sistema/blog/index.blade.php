@@ -24,35 +24,36 @@
 
     <main class="container">
 
-        <section class="section-about-video">
-            <div class="container col-xxl-12 ">
-                <div class="row flex-lg-row-reverse">
-                    <div class="col-12 col-sm-12 col-lg-9 align-items-center">
-                        <div class="ratio ratio-16x9">
-                            <iframe  class="col-12 col-sm-12 col-lg-9 align-items-center" width="100%" height="100%" src={{ asset('/img/logoanimado.gif') }}
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="col-lg-3">
-                        <div class="col-lg-12 text-center">
+        <section class="section-converge-video">
+            <div class="container">
+                <div class="row">
+                    <!-- Columna para la descripción -->
+                    <div class="col-lg-6 text-center d-flex align-items-center" style="border: 2px solid #b8860b; padding: 20px; border-radius: 10px;">
+                        <div>
                             <h1 class="display-4" style="color:#b8860b">¡Bienvenidos a Converge!</h1>
                             <p>
                                 Nos alegra que te unas a nuestra comunidad de información. En Converge, estamos comprometidos a
                                 ofrecerte las noticias más actuales, relevantes y confiables del panorama global. Ya sea política,
                                 economía, tecnología, entretenimiento o deportes, nuestro objetivo es mantenerte bien informado y al
                                 tanto de los acontecimientos más importantes del momento.
-            
+                            </p>
+                            <p>
                                 Aquí, no solo reportamos noticias, también fomentamos el diálogo y la reflexión. Queremos ser tu
                                 fuente de información confiable y tu espacio para el intercambio de ideas.
-            
-                                Gracias por confiar en nosotros para mantenerte informado. ¡Vamos a converger en la verdad y el
-                                conocimiento!.
                             </p>
+                            <p>
+                                Gracias por confiar en nosotros para mantenerte informado. ¡Vamos a converger en la verdad y el
+                                conocimiento!
+                            </p>
+                        </div>
+                    </div>
+        
+                    <!-- Columna para el GIF animado -->
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center" style="border: 2px solid #b8860b; padding: 20px; border-radius: 10px;">
+                        <div class="ratio ratio-1x1 w-40">
+                            <iframe src="{{ asset('/img/logoanimado.gif') }}" title="GIF animado" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe>
                         </div>
                     </div>
                 </div>
@@ -77,6 +78,7 @@
 
                     Gracias por confiar en nosotros para mantenerte informado. ¡Vamos a converger en la verdad y el
                     conocimiento!.
+                    
                 </p>
             </div>
         </div> --}}
