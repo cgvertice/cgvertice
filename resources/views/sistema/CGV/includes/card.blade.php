@@ -49,7 +49,7 @@
 
     .card .back {
         transform: perspective(600px) rotateY(180deg);
-        background: #003366;
+        background: #1b1b1b;
         color: #fff;
         padding: 15px;
         display: flex;
@@ -99,7 +99,7 @@
     <div class="contenedor-principal">
         <div class="card">
             <div class="face front">
-                <img src="{{ asset('img/ceet.png') }}" alt="Logo de Vértice">
+                <img src="{{ asset('img/Auditoria.jpg') }}" alt="Tarjeta promocional curso de auditoria">
                 <h3>Japan</h3>
             </div>
             <div class="face back">
