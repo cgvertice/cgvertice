@@ -81,6 +81,11 @@ class ProyectoController extends Controller
         return view ("/GestionCalidad");
     }
 
+    public function indexInterventoria()
+    {
+        return view('supervisionInterventoria');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

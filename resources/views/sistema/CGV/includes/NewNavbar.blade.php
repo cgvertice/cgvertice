@@ -62,6 +62,7 @@
                                     <li><a href="/gestionDesarrollo">Planes de Emergencia</a></li>
                                 </ul>
                             </li>
+                            <li><a href="/supervisionInterventoria">Supervisión e interventoria</a></li>
                             </ul>
                         </li>
                     </div>

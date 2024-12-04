@@ -44,7 +44,7 @@ Route::get('/GestionCalidad', [ProyectoController::class, 'indexGestionCalidad']
 Route::get('/gestionDesarrollo', [ProyectoController::class, 'indexGestionDesarrollo'])->name('ruta_gestion_desarrollo');
 Route::get('/GestionIps', [ProyectoController::class, 'indexGestionIps'])->name('ruta_gestion_Ips');
 Route::get('/FormacionContinua', [ProyectoController::class, 'indexFormacionContinua'])->name('ruta_formacion_continua');
-
+Route::get('/supervisionInterventoria', [ProyectoController::class, 'indexInterventoria'])->name('rutaInterventoria');
 Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['auth', 'can:Admin Configuracion'])->group(function () {

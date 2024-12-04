@@ -644,6 +644,29 @@
                         </div>
                     </div>
                 </div>
+                {{-- Supervision e Interventoria --}}
+                <div class="timeline-2 left-2" id="Interventoria">
+                    <div class="card">
+                        <a data-bs-toggle="modal" data-bs-target="#modalImageTimeline1">
+                            <img src={{ asset('img/GestionEmpresas.png') }} class="card-img-top"
+                                style="width: 100%; height: auto;" alt="Imagen de gestión empresarial">
+                        </a>
+                        <br>
+                        <h3 class="fw-bold mb-4 " style="font-family: 'Swiss', sans-serif; color:#b8860b">
+                            Supervisión e Interventoria
+                        </h3>
+                        <div class="card-body p-4">
+                            <p class="mb-0">
+                                En Corporate Group Vértice, nos comprometemos a ofrecer servicios de supervisión e interventoría de alta calidad, alineados con las normativas legales vigentes y las mejores prácticas en gestión de proyectos. Este servicio está diseñado para garantizar el cumplimiento de los objetivos de los contratos, supervisando cada etapa del proyecto con el fin de asegurar eficiencia, calidad, y sostenibilidad.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-warning">
+                        <a href="/supervisionInterventoria" style="color: black">Mas Información
+                    </a></button>
+                    
+                </div>
             </div>
         </div>
     </section>
